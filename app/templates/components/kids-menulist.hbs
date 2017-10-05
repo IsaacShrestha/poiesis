@@ -1,0 +1,9 @@
+{{!-- clickable links --}}
+	<ul class="list-group topmargin">
+	  {{#link-to 'kidsRequestRide' tagName="li" class="list-group-item"}}<a href>Request ride</a>{{/link-to}}
+	  {{#link-to 'kidsCancelRide' tagName="li" class="list-group-item"}}<a href>Cancel ride</a>{{/link-to}}
+	  {{#link-to 'kidsRideHistory' tagName="li" class="list-group-item"}}<a href>View History</a>{{/link-to}}
+	  {{#link-to 'kidsProfile' tagName="li" class="list-group-item"}}<a href>Profile</a>{{/link-to}}
+	</ul>
+
+{{yield}}

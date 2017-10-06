@@ -1,0 +1,56 @@
+<p>&nbsp;</p>
+<h3> Select ride to send cancel request </h3>
+<p>&nbsp;</p>
+
+<form>
+	<label>Beginning from:</label>
+	<i style="border:1px solid #A9A9A9; padding:2px;">{{todayDate}}</i>
+
+	&nbsp;&nbsp;
+	<label>To:</label>
+	{{bootstrap-datepicker autoclose=true orientation="right" }}
+</form>
+
+<p>&nbsp;</p>
+<div class="table-responsive">
+	<table class="table table-hover" border="1" cellpadding="5" cellspacing="5">
+		<tr>
+			<th>Driver's name</th>
+			<th>Pickup location</th>
+			<th>Dropoff location</th>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Select to cancel</th>
+		</tr>
+		<tr>
+			<td>John Meik</td>
+			<td>Home address</td>
+			<td>School address</td>
+			<td>15/7/2017</td>
+			<td>08:00:00 AM</td>
+			<td>{{input type="checkbox" name="cancelReq"}}</td>
+		</tr>
+		<tr>
+			<td>John Meik</td>
+			<td>Home address</td>
+			<td>School address</td>
+			<td>15/7/2017</td>
+			<td>08:00:00 AM</td>
+			<td>{{input type="checkbox" name="cancelReq"}}</td>
+		</tr>
+		<tr>
+			<td>John Meik</td>
+			<td>Home address</td>
+			<td>School address</td>
+			<td>15/7/2017</td>
+			<td>08:00:00 AM</td>
+			<td>{{input type="checkbox" name="cancelReq"}}</td>
+		</tr>
+	</table>
+</div>
+
+<div class="right">
+	<button class="btn btn-danger">Send cancel request to the guardian</button>
+</div>
+
+{{yield}}

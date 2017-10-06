@@ -97,19 +97,17 @@
 
 <br/><br/>
 <label>Pickup location:</label>
-	{{#x-select class="form-control reg-input-field" action="" as |xs|}}
-		{{#xs.option value=00}} Home - 3103 S 69th Ave {{/xs.option}}
-		{{#xs.option value=01}} School - 7110 Jones Circles {{/xs.option}}
-	{{/x-select}}	
+	{{input type="text" value="" placeholder="Enter pickup location" class="form-control"}}
+	
 
 <br/><br/>
 <label>Dropoff location:</label>
-	{{#x-select class="form-control reg-input-field" action="" as |xs|}}
-		{{#xs.option value=00}} Home - 3103 S 69th Ave {{/xs.option}}
-		{{#xs.option value=01}} School - 7110 Jones Circles {{/xs.option}}
-	{{/x-select}}
+	{{input type="text" value="" placeholder="Enter dropoff location" class="form-control"}}
 
 <br/>
-<button class="btn btn-block btn-success">Confirm</button>
+<div class="right">
+	<button class="btn btn-success">Send request to the guardian</button>
+</div>
+
 
 {{yield}}

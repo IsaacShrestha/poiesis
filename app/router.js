@@ -13,6 +13,10 @@ Router.map(function() {
 	this.route('kidsriderequests');
 	this.route('kidsridehistories');
 	this.route('kidsridecancels');
+	this.route('guardians');
+	this.route('guardianrequests');
+	this.route('guardiansridehistories');
+	this.route('guardiansridecancels');
 });
 
 export default Router;

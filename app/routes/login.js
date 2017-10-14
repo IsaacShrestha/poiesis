@@ -3,15 +3,18 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   actions:{
     login(){
-      const user = this.get('username');
-      //const pass = this.get('password');
-      this.get('store').query('kids', {orderBy:'username', equalTo: user }).then(function(users){
-        return users.get('firstObject');
-      }).then(function(users){
+       let controller = this.get('controller');
+       let user = controller.get('username');
+       let password = controller.get('password');
 
-        alert(users.get('password'));
-      });
-
+       this.get('session').open('firebase', {
+          provider: 'password',
+          email: user,
+          password: password
+        }).then(function() {
+          this.transitionTo('kids');
+        }.bind(this));
+       alert(user);
     }
   }
 });

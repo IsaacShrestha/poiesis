@@ -1,6 +1,7 @@
 {
   "name": "poiesis-frontend",
   "dependencies": {
-    "bootstrap-datepicker": "^1.7.1"
+    "bootstrap-datepicker": "^1.7.1",
+    "ember-simple-auth": "0.8.0"
   }
 }

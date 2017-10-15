@@ -1,22 +1,26 @@
 <div class="container">
-	<div class="row">
-		
-		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-			<img src="https://green.uw.edu/sites/default/files/snapshot/i405_TDM_icon_vanpool4.gif" class="img-fluid" alt="poiesis-carpooling" 
-			width="150" height="150"/>
-		</div>
-		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-			&nbsp;
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 left">
-			<h1>Poiesis - Enjoy carpooling!</h1>
-		</div>
-		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-			&nbsp;
-		</div>
+	<div class="row form-group"></div>
+	<div class="row">		
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+				{{#link-to 'login'}}<div class="navbar-brand" >Poiesis - Enjoy carpooling!</div>{{/link-to}}
+				</div>
+				<ul class="nav navbar-nav">
+				<li class="active">{{#link-to 'login'}}Home{{/link-to}} </li>
+				</ul>				
+				<ul class="nav navbar-nav navbar-right">
+				{{#if session.isAuthenticated}}
+					<li > <a href="" {{action 'logout' on='click'}}><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>				
+				{{else}}				
+					<li>{{#link-to 'register'}}<span class="glyphicon glyphicon-user"></span> Sign Up{{/link-to}}</li>
+					<li>{{#link-to 'login'}}<span class="glyphicon glyphicon-log-in"></span> Login{{/link-to}}</li>
+				{{/if}}
+				</ul>
+				
+			</div>
+		</nav>
 	</div>
-
-	
 </div>
 
 {{outlet}}

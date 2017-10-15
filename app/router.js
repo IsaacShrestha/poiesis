@@ -7,17 +7,18 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-    this.route('login', {path: '/'});
-    this.route('login');
-    this.route('register');
-    this.route('kids');
-    this.route('kidsriderequests');
-    this.route('kidsridehistories');
-    this.route('kidsridecancels');
-    this.route('guardians');
-    this.route('guardianrequests');
-    this.route('guardiansridehistories');
-    this.route('guardiansridecancels');
+  this.route('login', {path: '/'});
+  this.route('login');
+  this.route('register');
+  this.route('kidsriderequests');
+  this.route('kidsridehistories');
+  this.route('kidsridecancels');
+  this.route('guardians');
+  this.route('guardianrequests');
+  this.route('guardiansridehistories');
+  this.route('guardiansridecancels');
+  this.route('landingPage');
+  this.route('dashboard');
 });
 
 export default Router;

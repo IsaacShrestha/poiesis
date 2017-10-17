@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+    beforemodel: function(){},
     firebaseApp: Ember.inject.service(),
     actions:{
         signup(){
@@ -10,18 +11,12 @@ export default Ember.Route.extend({
             
             let ref = this.get('firebaseApp').auth();
             
-            ref.createUserWithEmailAndPassword(email, password)
-            .catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          if (errorCode == 'auth/weak-password') {
-            alert('The password is too weak.');
-          } else {
-            alert(errorMessage);
-          }
-          alert.log(error);
-        });
+            ref.createUserWithEmailAndPassword(email, password).then(function(user){
+                this.transitionToRoute('login');
+              }, function(error){
+                alert(error);
+            }).bind(this);
+            
         }
     }
 });

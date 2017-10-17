@@ -5,7 +5,7 @@ export default Ember.Route.extend({
         logout(){
             this.get('session').close().then(function() {
                 this.transitionTo('login');
-            }.bind(this));
+            }.bind(this)); 
         }
       }
 });

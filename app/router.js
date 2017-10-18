@@ -17,7 +17,7 @@ Router.map(function() {
     this.route('newprofile');
     this.route('newridereq', {path: '/'});
     this.route('showprofile');
-    this.route('ridehistory');
+    this.route('ridereqlists');
     this.route('showridereq');
     this.route('ridealerts');
 

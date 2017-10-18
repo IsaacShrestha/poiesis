@@ -1,26 +1,2 @@
-<div class="container">
-	<div class="row form-group"></div>
-	<div class="row">		
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-				{{#link-to 'login'}}<div class="navbar-brand" >Poiesis - Enjoy carpooling!</div>{{/link-to}}
-				</div>
-				<ul class="nav navbar-nav">
-				<li class="active">{{#link-to 'login'}}Home{{/link-to}} </li>
-				</ul>				
-				<ul class="nav navbar-nav navbar-right">
-				{{#if session.isAuthenticated}}
-					<li > <a href="" {{action 'logout' on='click'}}><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>				
-				{{else}}				
-					<li>{{#link-to 'register'}}<span class="glyphicon glyphicon-user"></span> Sign Up{{/link-to}}</li>
-					<li>{{#link-to 'login'}}<span class="glyphicon glyphicon-log-in"></span> Login{{/link-to}}</li>
-				{{/if}}
-				</ul>
-				
-			</div>
-		</nav>
-	</div>
-</div>
 
 {{outlet}}

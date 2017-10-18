@@ -7,18 +7,26 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('login', {path: '/'});
-  this.route('login');
-  this.route('register');
-  this.route('kidsriderequests');
-  this.route('kidsridehistories');
-  this.route('kidsridecancels');
-  this.route('guardians');
-  this.route('guardianrequests');
-  this.route('guardiansridehistories');
-  this.route('guardiansridecancels');
-  this.route('landingPage');
-  this.route('dashboard');
+  
+  this.route('kids', function() {
+    this.route('newprofile');
+    this.route('newridereq', {path: '/'});
+    /*this.route('edit', {
+      path: ':todo_id/edit'
+    });*/
+
+
+    this.route('showprofile');
+
+    this.route('ridehistory');
+
+    this.route('showridereq');
+
+  });
+  
 });
 
+
 export default Router;
+
+

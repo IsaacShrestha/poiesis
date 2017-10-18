@@ -14,12 +14,20 @@ Router.map(function() {
   
   //routes for kids template
   this.route('kids', function() {
-    this.route('newprofile');
-    this.route('newridereq', {path: '/'});
+    this.route('newprofile', {path: '/'});
+    this.route('newridereq');
     this.route('showprofile');
-    this.route('ridehistory');
+    this.route('ridereqlists');
     this.route('showridereq');
     this.route('ridealerts');
+
+  });
+
+  //routes for guardians
+  this.route('guardians', function() {
+    this.route('newprofile', {path: '/'});
+    this.route('reqfromkids');
+    
 
   });
 

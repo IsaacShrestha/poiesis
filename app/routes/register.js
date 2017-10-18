@@ -13,6 +13,7 @@ export default Ember.Route.extend({
             
             ref.createUserWithEmailAndPassword(email, password).then(function(user){
                 this.transitionToRoute('login');
+                alert('lol');
               }, function(error){
                 alert(error);
             }).bind(this);

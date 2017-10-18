@@ -1,14 +1,12 @@
 <div class="container">
 	<div class="row form-group"></div>
 	<div class="row">		
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-light" style="background-color: #337AB7;">
 			<div class="container-fluid">
 				<div class="navbar-header">
-				{{#link-to 'login'}}<div class="navbar-brand" >Poiesis - Enjoy carpooling!</div>{{/link-to}}
+				{{#link-to 'login'}}<div class="navbar-brand" style="color: #fff;" >Poiesis - Enjoy carpooling!</div>{{/link-to}}
 				</div>
-				<ul class="nav navbar-nav">
-				<li class="active">{{#link-to 'login'}}Home{{/link-to}} </li>
-				</ul>				
+								
 				<ul class="nav navbar-nav navbar-right">
 				{{#if session.isAuthenticated}}
 					<li > <a href="" {{action 'logout' on='click'}}><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>				
@@ -21,6 +19,9 @@
 			</div>
 		</nav>
 	</div>
-</div>
 
 {{outlet}}
+
+
+</div>
+

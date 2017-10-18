@@ -46,7 +46,7 @@
       <div class="form-group">
         <label class="control-label col-sm-2" for="role">Role:</label>
         <div class="col-sm-10" id="role"> 
-          {{#x-select value=volunteer action=(action "selectRole") as |xs|}}
+          {{#x-select action "selectRole" as |xs|}}
               {{#xs.option value=student}} Student {{/xs.option}}
               {{#xs.option value=parent}} Parent {{/xs.option}}
               {{#xs.option value=volunteer}} Volunteer {{/xs.option}}

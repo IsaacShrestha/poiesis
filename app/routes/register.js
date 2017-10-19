@@ -10,18 +10,26 @@ export default Ember.Route.extend({
             let password = controller.get('password');
             let role = 'kids';
             let ref = this.get('firebaseApp').auth();
+            var _this = this;
             ref.createUserWithEmailAndPassword(email, password).then(function(user){
                 
-                this.get('session').open('firebase', {
+                _this.get('session').open('firebase', {
                     provider: 'password',
                     email: email,
                     password: password
-                  }).then(function(){                
-                      this.transitionTo(role+'.newprofile');
-                    }.bind(this))
-              }.bind(this), function(error){
+                  }).then(function(registeredUser){
+                      let insertUser = _this.store.createRecord('user',{
+                          id: registeredUser.uid,
+                          email: email,
+                          role: role
+                      });
+                      insertUser.save().then(function(){
+                        _this.transitionTo(role+'.newprofile');                        
+                      })           
+                    })
+              }, function(error){
                 alert(error);
-            }.bind(this));          
+            });          
         },
         selectRole(value){
             this.set('currentValue', value);

@@ -1,0 +1,77 @@
+<div class="jumbotron">
+  <h3 class="display-3">Requests to book ride</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Request received from</th>
+        <th>Pickup location</th>
+        <th>Dropoff location</th>
+        <th>Send Ride Request</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10/20/2017</td>
+        <td>8:00 AM</td>
+        <td>John</td>
+        <td>Jones Circle</td>
+        <td>North Omaha</td>
+        <td><button {{action 'sendRequest'}} class="btn btn-block btn-success">Send</button></td>
+      </tr>
+      <tr>
+        <td>10/21/2017</td>
+        <td>8:00 AM</td>
+        <td>John</td>
+        <td>Jones Circle</td>
+        <td>North Omaha</td>
+        <td><button {{action 'sendRequest'}} class="btn btn-block btn-success">Send</button></td>
+      </tr>
+      <tr>
+        <td>10/22/2017</td>
+        <td>8:00 AM</td>
+        <td>Bobby</td>
+        <td>Jones Circle</td>
+        <td>North Omaha</td>
+        <td><button {{action 'sendRequest'}} class="btn btn-block btn-success">Send</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+   <h3 class="display-3">Requests to cancel ride</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Request received from</th>
+        <th>Pickup location</th>
+        <th>Dropoff location</th>
+        <th>Cancel Request</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10/20/2017</td>
+        <td>8:00 AM</td>
+        <td>John</td>
+        <td>Jones Circle</td>
+        <td>North Omaha</td>
+        <td><button {{action 'sendRequest'}} class="btn btn-block btn-danger">Cancel</button></td>
+      </tr>
+      <tr>
+        <td>10/21/2017</td>
+        <td>8:00 AM</td>
+        <td>John</td>
+        <td>Jones Circle</td>
+        <td>North Omaha</td>
+        <td><button {{action 'sendRequest'}} class="btn btn-block btn-danger">Cancel</button></td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+</div>
+
+{{yield}}

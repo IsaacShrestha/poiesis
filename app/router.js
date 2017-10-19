@@ -29,7 +29,17 @@ Router.map(function() {
        this.route('makerequests');
        this.route('ridereqlists');
        this.route('showprofile');
-       this.route('newprofile');
+       this.route('newprofile', {path: '/'});
+  });
+
+  //routes for volunteers
+  this.route('volunteers', function() {
+       this.route('showprofile');
+       this.route('newprofile', {path: '/'});
+       this.route('newriderequests');
+       this.route('acceptedrequests');
+       this.route('ridehistories');
+      
   });
 
 

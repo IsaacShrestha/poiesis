@@ -25,10 +25,11 @@ Router.map(function() {
 
   //routes for guardians
   this.route('guardians', function() {
-    this.route('newprofile', {path: '/'});
-    this.route('reqfromkids');
-    
-
+       this.route('reqfromkids');
+       this.route('makerequests');
+       this.route('ridereqlists');
+       this.route('showprofile');
+       this.route('newprofile');
   });
 
 

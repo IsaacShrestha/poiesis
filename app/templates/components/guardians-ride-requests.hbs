@@ -1,0 +1,92 @@
+
+
+<div class="jumbotron">
+  <h3 class="display-3">Request new ride!</h3>
+	<br/><br/>
+	<form class="form-horizontal">
+	  <div class="form-group">
+	    <label class="control-label col-sm-2" for="sendto">Ride request for:</label>
+	    <div class="col-sm-10">
+	      {{#x-select class="form-control" as |xs|}}
+	      	{{#xs.option value=''}}Whom you are requesting for?{{/xs.option}}
+	      	{{#xs.option value=''}}John{{/xs.option}}
+	      	{{#xs.option value=''}}Bobby{{/xs.option}}
+	      {{/x-select}}
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label col-sm-2" for="date">Date:</label>
+	    <div class="col-sm-10"> 
+	    	{{bootstrap-datepicker autoclose=true startDate=startDate class="form-control"}}
+	     
+	    </div>
+	  </div>
+	   <div class="form-group">
+	    <label class="control-label col-sm-2" for="Time">Time:</label>
+	    <div class="col-sm-4"> 
+	     {{#x-select class="form-control" as |xs|}}
+	      	{{#xs.option value=''}}00 {{/xs.option}}
+	      	{{#xs.option value=''}}01{{/xs.option}}
+	      	{{#xs.option value=''}}02{{/xs.option}}
+	      	{{#xs.option value=''}}03{{/xs.option}}
+	      	{{#xs.option value=''}}04{{/xs.option}}
+	      	{{#xs.option value=''}}05{{/xs.option}}
+	      	{{#xs.option value=''}}06{{/xs.option}}
+	      	{{#xs.option value=''}}07{{/xs.option}}
+	      	{{#xs.option value=''}}08{{/xs.option}}
+	      	{{#xs.option value=''}}09{{/xs.option}}
+	      	{{#xs.option value=''}}10{{/xs.option}}
+	      	{{#xs.option value=''}}11{{/xs.option}}
+	      	{{#xs.option value=''}}12{{/xs.option}}
+	      	{{#xs.option value=''}}13{{/xs.option}}
+	      	{{#xs.option value=''}}14{{/xs.option}}
+	      	{{#xs.option value=''}}15{{/xs.option}}
+	      	{{#xs.option value=''}}16{{/xs.option}}
+	      	{{#xs.option value=''}}17{{/xs.option}}
+	      	{{#xs.option value=''}}18{{/xs.option}}
+	      	{{#xs.option value=''}}19{{/xs.option}}
+	      	{{#xs.option value=''}}20{{/xs.option}}
+	      	{{#xs.option value=''}}21{{/xs.option}}
+	      	{{#xs.option value=''}}22{{/xs.option}}
+	      	{{#xs.option value=''}}23{{/xs.option}}
+
+	      {{/x-select}}
+
+	      
+	    </div>
+	   
+	    <div class="col-sm-4">
+	    	{{#x-select class="form-control" as |xs|}}
+		      	{{#xs.option value=''}}00 {{/xs.option}}
+		      	{{#xs.option value=''}}15{{/xs.option}}
+		      	{{#xs.option value=''}}30{{/xs.option}}
+		      	{{#xs.option value=''}}45{{/xs.option}}SS
+
+	      	{{/x-select}}
+	    </div>
+	    <span>Hours&nbsp;:&nbsp;Minutes</span>
+	  </div>
+	   <div class="form-group">
+	    <label class="control-label col-sm-2" for="pickup">Pickup location:</label>
+	    <div class="col-sm-10"> 
+	      <input type="password" class="form-control" id="pwd" placeholder="Enter Pickup location">
+	    </div>
+	  </div>
+
+	   <div class="form-group">
+	    <label class="control-label col-sm-2" for="drop">Drop off location:</label>
+	    <div class="col-sm-10"> 
+	      <input type="password" class="form-control" id="pwd" placeholder="Enter Dropoff location">
+	    </div>
+	  </div>
+	  <div class="form-group"> 
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="button" class="btn btn-block btn-success" >Send Request</button>
+	    </div>
+	  </div>
+</form>  
+  
+
+</div>
+
+{{yield}}

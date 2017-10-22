@@ -2,7 +2,7 @@
 <div class="row ">
   <div class="col-sm-2 col-md-2"></div>
 
-  <div class="col-sm-6 col-md-offset-1 col-md-6">
+  <div class="col-sm-8 col-md-8">
 
     <form class="form-horizontal" {{action 'signup' on='submit'}}>
 
@@ -44,24 +44,21 @@
       </div> --}}
 
       <div class="form-group">
-        <label class="control-label col-sm-2" for="role">Role:</label>
-        <div class="col-sm-10" id="role"> 
-          {{#x-select action "selectRole" as |xs|}}
-              {{#xs.option value=student}} Student {{/xs.option}}
-              {{#xs.option value=parent}} Parent {{/xs.option}}
-              {{#xs.option value=volunteer}} Volunteer {{/xs.option}}
-          {{/x-select}}
+        <label class="control-label col-sm-2">Role:</label>
+        <div class="col-sm-4">
+          {{#power-select value=currentValue selected=defaultValue options=roles onchange=(action "selectRole") as |role|}}
+            {{role}}
+          {{/power-select}}
         </div>
       </div>
-
       <div class="form-group"> 
-        <div class="col-sm-2 col-md-2 col-sm-offset-10 col-md-offset-10">
-          <button type="submit" class="btn btn-default form-control">Submit</button>
+        <div class="col-sm-4 col-md-4 col-sm-offset-8 col-md-offset-8">
+          <input type="submit" class="btn btn-lg btn-primary btn-block" value="Signup">
         </div>
       </div>
 
     </form>
   </div>
 
-  <div class="col-sm-4 col-md-3"></div>
+  <div class="col-sm-2 col-md-2"></div>
 </div>

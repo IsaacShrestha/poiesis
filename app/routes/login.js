@@ -22,7 +22,7 @@ export default Ember.Route.extend({
         }).then(function(userLogin) {
           _this.get('store').findRecord('user', userLogin.uid).then(function(userValue){
               let role = userValue.get('role');
-              _this.transitionTo(role+'.showprofile');
+              _this.transitionTo('dashboard');
           })
           
         });

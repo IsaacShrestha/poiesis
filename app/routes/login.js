@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   firebaseApp: Ember.inject.service(),
-
+  session: Ember.inject.service(),
   beforeModel: function(){
     if(this.get('session.isAuthenticated')){
       this.transitionTo('dashboard');
@@ -21,7 +21,9 @@ export default Ember.Route.extend({
           password: password
         }).then(function(userLogin) {
           _this.get('store').findRecord('user', userLogin.uid).then(function(userValue){
-              let role = userValue.get('role');
+              //_this.set('currentUser', userValue);
+              
+              console.log(_this.get('session'));
               _this.transitionTo('dashboard');
           })
           

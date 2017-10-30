@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login', {path: '/'});
   this.route('register');
-  this.route('dashboard');
+  this.authenticatedRoute('dashboard');
 
   
   //routes for kids template
@@ -25,11 +25,11 @@ Router.map(function() {
 
   //routes for guardians
   this.route('guardians', function() {
-       this.route('reqfromkids');
-       this.route('makerequests');
-       this.route('ridereqlists');
-       this.route('showprofile');
-       this.route('newprofile', {path: '/'});
+    this.route('reqfromkids');
+    this.route('makerequests');
+    this.route('ridereqlists');
+    this.route('dashboard');
+    this.route('profile');
   });
 
   //routes for volunteers

@@ -24,7 +24,7 @@ export default Ember.Route.extend({
                           role: role
                       });
                       insertUser.save().then(function(){
-                        _this.transitionTo('dashboard');                        
+                        _this.transitionTo(role+'.profile');                        
                       })           
                     })
               }, function(error){

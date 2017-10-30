@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+		{{guardian-menu}}
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+
+                <form class="form-horizontal" {{action 'updateprofile' on='submit'}}>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Name:</label>
+                        <div class="col-sm-10">
+                        {{input type="text" class="form-control" required=isRequired value=name id="name" placeholder=model.name}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Address:</label>
+                        <div class="col-sm-10"> 
+                        {{input type="text" class="form-control" required=isRequired value=address id="address" placeholder=model.address}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Phone:</label>
+                        <div class="col-sm-10"> 
+                        {{input type="text" class="form-control" required=isRequired value=phone id="phone" placeholder=model.phone}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Email:</label>
+                        <div class="col-sm-10">
+                        {{input type="email" class="form-control" required=isRequired disabled=entryNotAllowed value=model.email id="email" placeholder=model.email }}
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Password:</label>
+                        <div class="col-sm-10"> 
+                        {{input type="password" required=isRequired class="form-control" value=password id="pwd" placeholder="min 6 characters"}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Kid emails:</label>
+                        <div class="col-sm-10"> 
+                        {{input type="email" class="form-control" required=isRequired value=kidemail id="kidemails" placeholder=model.kidEmails}}
+                        </div>
+                    </div>
+
+                    <div class="form-group"> 
+                        <div class="col-sm-4 col-md-4 col-sm-offset-8 col-md-offset-8">
+                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Update Profile">
+                        </div>
+                    </div>
+
+                </form>         
+
+            </div>
+        </div>
+
+	</div>
+</div>

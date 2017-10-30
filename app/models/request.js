@@ -5,5 +5,6 @@ export default DS.Model.extend({
     time: DS.attr(),
     pickup: DS.attr(),
     dropoff: DS.attr(),
-    requestedBy: DS.attr()
+    requestedBy: DS.attr(),
+    status: DS.attr()
 });

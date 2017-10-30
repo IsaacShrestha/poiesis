@@ -4,7 +4,56 @@
 		{{guardian-menu}}
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-		{{guardians-ride-requests}}
+		<div class="jumbotron">
+			<h3 class="display-3">Request new ride!</h3>
+				<br/><br/>
+
+				<form class="form-horizontal" {{action 'requestride' on='submit'}}>
+				{{!-- <div class="form-group">
+					<label class="control-label col-sm-2" for="sendto">Ride request for:</label>
+					<div class="col-sm-10">
+					{{#x-select class="form-control" as |xs|}}
+						{{#xs.option value=''}}Whom you are requesting for?{{/xs.option}}
+						{{#xs.option value=''}}John{{/xs.option}}
+						{{#xs.option value=''}}Bobby{{/xs.option}}
+					{{/x-select}}
+					</div>
+				</div> --}}
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="date">Date:</label>
+					<div class="col-sm-10"> 
+						{{bootstrap-datepicker value=date autoclose=true startDate=startDate class="form-control"}}
+					
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="Time">Time:</label>
+					<div class="col-sm-4"> 
+					{{input type="text" class="form-control" id="time" value=time placeholder="Enter Time"}}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="pickup">Pickup location:</label>
+					<div class="col-sm-10"> 
+					{{input type="text" class="form-control" id="pickup" value=pickup placeholder="Enter Pickup location"}}
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="drop">Drop off location:</label>
+					<div class="col-sm-10"> 
+					{{input type="text" class="form-control" id="dropoff" value=dropoff placeholder="Enter Dropoff location"}}
+					</div>
+				</div>
+				<div class="form-group"> 
+					<div class="col-sm-offset-2 col-sm-10">
+					<input type="submit" class="btn btn-lg btn-primary btn-block" value="Request ride">
+					</div>
+				</div>
+			</form>  
+			
+
+			</div>
 	</div>
 
 </div>

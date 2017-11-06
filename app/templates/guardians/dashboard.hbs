@@ -4,7 +4,17 @@
 		{{guardian-menu}}
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-		{{upcoming-rides}}
+		<div class='row well well-lg'>
+			Confirmed rides
+			{{#each model as |requestedRide|}}
+			{{requestedRide.date}}
+			{{/each}}
+		</div>
+		<div class='row well well-lg'>
+			Pending requests
+			{{#each model as |requestedRide|}}
+			{{/each}}
+		</div>
 	</div>
 
 </div>

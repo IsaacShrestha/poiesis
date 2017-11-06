@@ -12,7 +12,7 @@ export default Ember.Route.extend({
             let ref = this.get('firebaseApp').auth();
             var _this = this;
             ref.createUserWithEmailAndPassword(email, password).then(function(user){
-                
+
                 _this.get('session').open('firebase', {
                     provider: 'password',
                     email: email,
@@ -24,12 +24,12 @@ export default Ember.Route.extend({
                           role: role
                       });
                       insertUser.save().then(function(){
-                        _this.transitionTo(role+'.profile');                        
-                      })           
+                        _this.transitionTo(role+'.profile');
+                      })
                     })
               }, function(error){
                 alert(error);
-            });          
+            });
         }
     }
 });

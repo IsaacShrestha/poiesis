@@ -2,17 +2,21 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     firebaseApp: Ember.inject.service(),
-    
+
     model() {
         let user = this.get('firebaseApp').auth().currentUser;
         let id = user.uid;
-
-        return this.get('store').findRecord('guardian', id);       
+        let email = this.set('loginEmail', user.email);
+        return this.get('store').findRecord('guardian', id).then(function(userProfile){
+          return userProfile;
+        },function(){
+          return null;
+        });
     },
     actions:{
-        
+
         updateprofile(){
-            
+
             let controller = this.get('controller');
             let email = controller.get('email');
             let password = controller.get('password');
@@ -32,6 +36,7 @@ export default Ember.Route.extend({
                 record.save();
             }, function(){
                 let newProfile = _this.get('store').createRecord('guardian', {
+                    id: id,
                     name: name,
                     address: address,
                     phone: phone,
@@ -47,5 +52,5 @@ export default Ember.Route.extend({
 
         }
     }
-    
+
 });

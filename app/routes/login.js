@@ -21,10 +21,7 @@ export default Ember.Route.extend({
           password: password
         }).then(function(userLogin) {
           _this.get('store').findRecord('user', userLogin.uid).then(function(userValue){
-              //_this.set('currentUser', userValue);
-              
-              console.log(_this.get('session'));
-              _this.transitionTo('dashboard');
+              _this.transitionTo(userValue.get('role')+'.dashboard');
           })
           
         });

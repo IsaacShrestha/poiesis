@@ -1,21 +1,13 @@
 <div class="row">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-		{{guardian-menu}}
+		{{volunteers-menu}}
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 		<div class='row well well-lg'>
-			<h3>Confirmed rides</h3>
+			<h3>Volunteered rides</h3>
 			{{#each model as |requestedRide| }}
 				{{#if (eq requestedRide.status 'confirmed')}}
-					{{ride-display ride=requestedRide}}
-				{{/if}}
-			{{/each}}
-		</div>
-		<div class='row well well-lg'>
-			<h3>Pending requests</h3>
-			{{#each model as |requestedRide|}}
-				{{#if (eq requestedRide.status 'pending')}}
 					{{ride-display ride=requestedRide}}
 				{{/if}}
 			{{/each}}

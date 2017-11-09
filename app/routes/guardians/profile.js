@@ -14,9 +14,7 @@ export default Ember.Route.extend({
         });
     },
     actions:{
-
         updateprofile(){
-
             let controller = this.get('controller');
             let email = controller.get('email');
             let password = controller.get('password');
@@ -49,8 +47,6 @@ export default Ember.Route.extend({
             user.updatePassword(password).then(function(){
                 alert('Profile Updated!!');
             });
-
         }
     }
-
 });

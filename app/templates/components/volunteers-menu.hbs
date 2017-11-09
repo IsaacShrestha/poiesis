@@ -1,8 +1,8 @@
 <div class="list-group">
-  {{#link-to 'volunteers.newriderequests' tagName='li' class="list-group-item "}}<a href>New Ride Requests <span class="badge badge-secondary" style="float:right;"> 1</span></a>{{/link-to}}
-  {{#link-to 'volunteers.acceptedrequests' tagName='li' class="list-group-item "}}<a href>Accepted Requests <span class="badge badge-secondary" style="float:right;"> 3</span></a>{{/link-to}} 
-  {{#link-to 'volunteers.ridehistories' tagName='li' class="list-group-item "}}<a href>Ride histories <span class="badge badge-secondary" style="float:right;"> 2</span></a>{{/link-to}}
-  {{#link-to 'volunteers.showprofile' tagName='li' class="list-group-item "}}<a href>My Profile</a>{{/link-to}}
+  {{#link-to 'volunteers.dashboard' tagName='li' class="list-group-item "}}Dashboard<span class="badge badge-secondary" style="float:right;"> 3</span>{{/link-to}} 
+  {{#link-to 'volunteers.newriderequests' tagName='li' class="list-group-item "}}New Ride Requests <span class="badge badge-secondary" style="float:right;"> 1</span>{{/link-to}}
+  {{#link-to 'volunteers.ridehistories' tagName='li' class="list-group-item "}}Ride histories <span class="badge badge-secondary" style="float:right;"> 2</span>{{/link-to}}
+  {{#link-to 'volunteers.profile' tagName='li' class="list-group-item "}}My Profile{{/link-to}}
 </div>
 
 {{yield}}

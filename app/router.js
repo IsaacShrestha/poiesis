@@ -34,8 +34,8 @@ Router.map(function() {
 
   //routes for volunteers
   this.route('volunteers', function() {
-       this.route('showprofile');
-       this.route('newprofile', {path: '/'});
+      this.route('dashboard');    
+       this.route('profile');
        this.route('newriderequests');
        this.route('acceptedrequests');
        this.route('ridehistories');

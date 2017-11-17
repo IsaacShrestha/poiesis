@@ -23,7 +23,6 @@ export default Ember.Route.extend({
             let phone = controller.get('phone');
             let kidemail = controller.get('kidemail');
             let _this = this;
-
             let user = this.get('firebaseApp').auth().currentUser;
             let id = user.uid;
             this.get('store').findRecord('guardian', id).then(function(record){

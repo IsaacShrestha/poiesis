@@ -6,16 +6,18 @@ export default Ember.Route.extend({
     beforeModel: function(){
         if(!this.get('session.isAuthenticated')){
         this.transitionTo('login');
-        }     
+        }             
     },
     model(){
-    let user = this.get('firebaseApp').auth().currentUser;
-    let id = user.uid;
-    return this.get('store').query('request', {
-        filter:{
-            requestedBy: id
-        }
-    });
+        let user = this.get('firebaseApp').auth().currentUser;
+        let id = user.uid;
+        return this.get('store').query('request', {
+            filter:{
+                requestedBy: id
+            }
+        }).then(function(currentRequests){
+            return currentRequests
+        });
     }
         
 });

@@ -13,7 +13,8 @@ export default Ember.Route.extend({
             let time = controller.get('time');
             let pickup = controller.get('pickup');
             let dropoff = controller.get('dropoff');
-            let status = 'new';
+            let status = 'pending';
+            let acceptedBy = 'null';
             let requestedBy= id;
             let _this = this;
             // this.get('store').query('request', {
@@ -48,6 +49,7 @@ export default Ember.Route.extend({
                 pickup: pickup,
                 dropoff: dropoff,
                 requestedBy: requestedBy,
+                acceptedBy: acceptedBy,
                 status: status
             });
             newRequest.save().then(function(){

@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   beforeModel: function(){
     let _this = this;
     if(this.get('session.isAuthenticated')){
-      //let role = _this.get('session.currentUser.role');
+      let role = _this.get('session.currentUser.role');
       _this.transitionTo(role+'.dashboard');
     }
   },

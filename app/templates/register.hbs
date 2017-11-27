@@ -19,34 +19,10 @@
           {{input type="password" class="form-control" value=password id="pwd" placeholder="Minimum 6 digits"}}
         </div>
       </div>
-{{!-- 
-      <div class="form-group">
-        <label class="control-label col-sm-2" >Name:</label>
-        <div class="col-sm-5"> 
-          {{input type="text" class="form-control" value=firstname id="firstName" placeholder="Firstname"}}
-        </div>
-        <div class="col-sm-5"> 
-          {{input type="text" class="form-control" value=lastname id="lastName" placeholder="Lastname"}}
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="phone">Phone:</label>
-        <div class="col-sm-10"> 
-          {{input type="text" maxlength="10" class="form-control" value=phone id="phone" placeholder="Phone"}}
-        </div>
-      </div>
-      <div class="form-group">
-          <label class="control-label col-sm-2" for="address">Address:</label>
-        <div class="col-sm-10"> 
-          {{textarea type="text" class="form-control"  value=address id="address" placeholder="Address"}}
-        </div>
-      </div> --}}
-
       <div class="form-group">
         <label class="control-label col-sm-2">Role:</label>
         <div class="col-sm-4">
-          {{#power-select value=currentValue selected=defaultValue options=roles onchange=(action "selectRole") as |role|}}
+          {{#power-select value=defaultValue selected=defaultValue options=roles onchange=(action "selectRole") as |role|}}
             {{role}}
           {{/power-select}}
         </div>

@@ -8,11 +8,10 @@ export default Ember.Route.extend({
             let controller = this.get('controller');
             let email = controller.get('email');
             let password = controller.get('password');
-            let role = controller.get('currentValue');
+            let role = controller.get('defaultValue');
             let ref = this.get('firebaseApp').auth();
             var _this = this;
             ref.createUserWithEmailAndPassword(email, password).then(function(user){
-
                 _this.get('session').open('firebase', {
                     provider: 'password',
                     email: email,

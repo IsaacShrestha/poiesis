@@ -2,11 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     firebaseApp: Ember.inject.service(),
-    
     beforeModel: function(){
         if(!this.get('session.isAuthenticated')){
         this.transitionTo('login');
-        }  
+        }      
         let user = this.get('firebaseApp').auth().currentUser;
         let id = user.uid;
         let _this = this;
@@ -21,7 +20,7 @@ export default Ember.Route.extend({
                     _this.transitionTo('guardians.profile');
                 });
             }
-        });            
+        });        
     },
     model(){
         let user = this.get('firebaseApp').auth().currentUser;
@@ -29,24 +28,8 @@ export default Ember.Route.extend({
         let _this = this;
         return this.store.findAll('request').then(function(){
             return _this.store.filter('request', function(records){
-                return records.get('requestedBy')===id;
+                return records.get('requestedBy')==id;
             });
         });
-        // return this.store.query('request', {
-        //     filter:{
-        //         requestedBy: 'lol'
-        //     }
-        // });
     },
-    actions:{
-        cancelRequest(requstedRide){
-            let user = this.get('firebaseApp').auth().currentUser;
-            let id = user.uid;
-            let rideId = requstedRide.get('id');
-            this.get('store').findRecord('request', rideId).then(function(record){
-                record.destroyRecord();
-            }, function(){alert("Error!!! Cannot delete request.")});
-        }
-    }
-        
 });

@@ -23,27 +23,13 @@ export default Ember.Route.extend({
         });
     },
     model(){
-        let _this = this;
         let user = this.get('firebaseApp').auth().currentUser;
         let id = user.uid;
+        let _this = this;
         return this.store.findAll('request').then(function(){
             return _this.store.filter('request', function(records){
-                return records.get('status')==='pending' && records.get('requestedBy')!=id;
+                return records.get('acceptedBy')==id;
             });
         });
     },
-    actions:{
-        acceptRequest(requstedRide){
-            let user = this.get('firebaseApp').auth().currentUser;
-            let id = user.uid;
-            let rideId = requstedRide.get('id');
-            let token = Math.floor(Math.random()*10000);
-            this.get('store').findRecord('request', rideId).then(function(record){
-                record.set('acceptedBy', id);
-                record.set('status', 'confirmed');
-                record.set('token', token);
-                record.save();
-            }, function(){alert("Error!!!")});
-        }
-    }
 });

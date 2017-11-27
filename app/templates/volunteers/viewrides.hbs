@@ -5,8 +5,8 @@
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 		<div class='row well well-lg'>
-			<h3>Volunteered rides</h3>
-			{{#each model as |requestedRide| }}		
+			<h3>Confirmed rides</h3>
+			{{#each model as |requestedRide| }}
 				{{#if (eq requestedRide.status 'confirmed')}}
 					<div class='col-lg-10 col-md-10 col-sm-10 col-xs-10'>
 						{{ride-display ride=requestedRide}}
@@ -15,17 +15,25 @@
 						<div class='row' {{action 'cancelRequest' requestedRide on='click'}}>
 							{{input type="button" value="Cancel" }}
 						</div>
-						<div class='row' >
-							{{input type="text" placeholder="Enter Token" value=token}}
-							<div {{action 'completeRide' requestedRide on='click'}}>		
-								{{input type="button" value="Verify" }}
-							</div>
-						</div>
 					</div>
-				{{/if}}	
+				{{/if}}
 			{{/each}}
 		</div>
-		
+		<div class='row well well-lg'>
+			<h3>Pending requests</h3>
+			{{#each model as |requestedRide|}}
+				{{#if (eq requestedRide.status 'pending')}}
+					<div class='col-lg-10 col-md-10 col-sm-10 col-xs-10'>
+						{{ride-display ride=requestedRide}}
+					</div>
+					<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2'>
+						<div class='row' {{action 'cancelRequest' requestedRide on='click'}}>
+							{{input type="button" value="Cancel" }}
+						</div>
+					</div>
+				{{/if}}
+			{{/each}}
+		</div>
 	</div>
 
 </div>

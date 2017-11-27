@@ -9,41 +9,35 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login', {path: '/'});
   this.route('register');
+  this.route('login');
   this.authenticatedRoute('dashboard');
-
-  
-  //routes for kids template
-  this.route('kids', function() {
-    this.route('newprofile', {path: '/'});
-    this.route('newridereq');
-    this.route('showprofile');
-    this.route('ridereqlists');
-    this.route('showridereq');
-    this.route('ridealerts');
-
-  });
 
   //routes for guardians
   this.route('guardians', function() {
-    this.route('reqfromkids');
     this.route('makerequests');
-    this.route('ridereqlists');
     this.route('dashboard');
     this.route('profile');
+    this.route('ridehistories');
   });
 
   //routes for volunteers
   this.route('volunteers', function() {
-      this.route('dashboard');    
-       this.route('profile');
-       this.route('newriderequests');
-       this.route('acceptedrequests');
-       this.route('ridehistories');
-      
+    this.route('dashboard', {path: '/'});
+    this.route('dashboard');
+    this.route('profile');
+    this.route('newriderequests');
+    this.route('acceptedrequests');
+    this.route('ridehistories');
+    this.route('makerequests');
+    this.route('viewrides');
   });
 
-
-  
+  this.route('kids', function() {
+    this.route('dashboard', {path: '/'});
+    this.route('dashboard');
+    this.route('profile');
+    this.route('history');
+  });
 });
 
 export default Router;

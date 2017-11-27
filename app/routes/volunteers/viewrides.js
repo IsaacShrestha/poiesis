@@ -2,10 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     firebaseApp: Ember.inject.service(),
-    beforeModel(){
+    
+    beforeModel: function(){
         if(!this.get('session.isAuthenticated')){
             this.transitionTo('login');
-        }
+        }   
         let user = this.get('firebaseApp').auth().currentUser;
         let id = user.uid;
         let _this = this;
@@ -20,9 +21,7 @@ export default Ember.Route.extend({
                     _this.transitionTo('volunteers.profile');
                 });
             }
-        });
-        
-        
+        });     
     },
     model(){
         let user = this.get('firebaseApp').auth().currentUser;
@@ -30,10 +29,14 @@ export default Ember.Route.extend({
         let _this = this;
         return this.store.findAll('request').then(function(){
             return _this.store.filter('request', function(records){
-                return records.get('acceptedBy')===id;
+                return records.get('requestedBy')===id;
             });
         });
-        return this.store.findAll('request');
+        // return this.store.query('request', {
+        //     filter:{
+        //         requestedBy: 'lol'
+        //     }
+        // });
     },
     actions:{
         cancelRequest(requstedRide){
@@ -41,27 +44,9 @@ export default Ember.Route.extend({
             let id = user.uid;
             let rideId = requstedRide.get('id');
             this.get('store').findRecord('request', rideId).then(function(record){
-                record.set('acceptedBy', 'null');
-                record.set('status', 'pending');
-                record.save();
-            }, function(){alert("Error!!!")});
-        },
-        completeRide(requstedRide){
-            let user = this.get('firebaseApp').auth().currentUser;
-            let id = user.uid;
-            let rideId = requstedRide.get('id');
-            let controller = this.get('controller');
-            let token = controller.get('token');
-            this.get('store').findRecord('request', rideId).then(function(record){
-                if (record.get('token')==token){
-                    record.set('status', 'completed');
-                    record.save();
-                }
-                else{
-                    alert("Invalid Token!!!");
-                    throw new Error("invalidToken");
-                }
-            });
+                record.destroyRecord();
+            }, function(){alert("Error!!! Cannot delete request.")});
         }
     }
+        
 });

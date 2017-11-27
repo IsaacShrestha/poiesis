@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import moment from 'moment';
 
 export default Ember.Route.extend({
     firebaseApp: Ember.inject.service(),
@@ -11,17 +10,17 @@ export default Ember.Route.extend({
         let id = user.uid;
         let _this = this;
         this.get('store').findRecord('user', id).then(function(rec){
-            if (rec.get('role')!='guardians'){
+            if (rec.get('role')!='volunteers'){
                 alert('Cannot access this page!');
                 _this.transitionTo(rec.get('role'));
             }
             else{
-                _this.get('store').findRecord('guardian', id).then(function(rec){},function(err){
+                this.get('store').findRecord('volunteer', id).then(function(rec){},function(err){
                     alert('Create a profile first!!!');
-                    _this.transitionTo('guardians.profile');
+                    _this.transitionTo('volunteers.profile');
                 });
             }
-        }); 
+        });
     },
     actions:{
         requestride(){
@@ -29,10 +28,6 @@ export default Ember.Route.extend({
             let id = user.uid;
             let controller = this.get('controller');
             let date = controller.get('date');
-            
-            let date2 = moment(date).format("dd/mm/yyyy");
-
-            alert(date2);
             let time = controller.get('time');
             let pickup = controller.get('pickup');
             let dropoff = controller.get('dropoff');

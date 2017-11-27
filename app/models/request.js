@@ -7,5 +7,7 @@ export default DS.Model.extend({
     dropoff: DS.attr(),
     requestedBy: DS.attr(),
     acceptedBy: DS.attr(),
-    status: DS.attr()
+    status: DS.attr(),
+    token: DS.attr(),
+    requestedFor: DS.attr()
 });

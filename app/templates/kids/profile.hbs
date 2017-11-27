@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-		{{guardian-menu}}
+		{{kids-menu}}
 	</div>
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
@@ -39,12 +39,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2">Kid emails:</label>
+                    <label class="control-label col-sm-2">School Name:</label>
                     <div class="col-sm-10">
-                    {{input type="email" class="form-control" required=isRequired value=kidemail id="kidemails" placeholder=model.kidEmails}}
+                    {{input type="text" class="form-control" required=isRequired value=kidSchoolName id="kidSchoolName" placeholder=model.kidSchoolName}}
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label class="control-label col-sm-2">School Address:</label>
+                    <div class="col-sm-10">
+                    {{input type="text" class="form-control" required=isRequired value=kidSchoolAddress id="kidSchoolAddress" placeholder=model.kidSchoolAddress}}
+                    </div>
+                </div>
                 <div class="form-group">
                     <div class="col-sm-4 col-md-4 col-sm-offset-8 col-md-offset-8">
                     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Update Profile">

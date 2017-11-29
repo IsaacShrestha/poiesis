@@ -15,7 +15,7 @@ export default Ember.Route.extend({
                 _this.transitionTo(rec.get('role'));
             }
             else{
-                this.get('store').findRecord('volunteer', id).then(function(rec){},function(err){
+                _this.get('store').findRecord('volunteer', id).then(function(rec){},function(err){
                     alert('Create a profile first!!!');
                     _this.transitionTo('volunteers.profile');
                 });

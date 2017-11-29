@@ -27,7 +27,7 @@ export default Ember.Route.extend({
             let name = controller.get('name');
             let address = controller.get('address');
             let phone = controller.get('phone');
-            let email = controller.get('email');
+            let email = controller.get('kidemail');
 
             let manufacturer = controller.get('manufacturer');
             let modelNo = controller.get('modelNo');
@@ -63,6 +63,13 @@ export default Ember.Route.extend({
                 else{
                     if (!record.get('phone')){alert('Enter phone');throw new Error('Enter data');}
                     record.set('phone', record.get('phone'));
+                }
+                if (email){
+                    record.set('kidEmails', email);
+                }
+                else{
+                    if (!record.get('kidEmails')){alert('Enter phone');throw new Error('Enter data');}
+                    record.set('kidEmails', record.get('kidEmails'));
                 }
                 if (manufacturer){
                     record.set('manufacturer', manufacturer);
@@ -115,8 +122,9 @@ export default Ember.Route.extend({
                     phone: phone,
                     manufacturer: manufacturer,
                     modelNo: modelNo,
-                    carColor: color,
+                    carColor: carColor,
                     buildyear: buildyear,
+                    kidEmails: email,
                     registerationNo: registeration,
                     licenseNo: license
                 });

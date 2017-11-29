@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import moment from 'moment';
 
 export default Ember.Route.extend({
     firebaseApp: Ember.inject.service(),
@@ -29,10 +28,7 @@ export default Ember.Route.extend({
             let id = user.uid;
             let controller = this.get('controller');
             let date = controller.get('date');
-            
-            let date2 = moment(date).format("dd/mm/yyyy");
-
-            alert(date2);
+            moment(date).format("dd/mm/yy");
             let time = controller.get('time');
             let pickup = controller.get('pickup');
             let dropoff = controller.get('dropoff');
@@ -45,7 +41,6 @@ export default Ember.Route.extend({
             let gProfile = this.get('store').findRecord('guardian', id).then(function(record){
             
                 let requestedFor = record.get('kidEmails');
-                console.log(requestedFor);
                 let newRequest = _this.get('store').createRecord('request', {
                     date: date,
                     time: time,

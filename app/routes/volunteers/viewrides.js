@@ -4,8 +4,9 @@ export default Ember.Route.extend({
     firebaseApp: Ember.inject.service(),
     
     beforeModel: function(){
+        let that = this;
         if(!this.get('session.isAuthenticated')){
-            this.transitionTo('login');
+            that.transitionTo('login');
         }   
         let user = this.get('firebaseApp').auth().currentUser;
         let id = user.uid;
@@ -16,7 +17,7 @@ export default Ember.Route.extend({
                 _this.transitionTo(rec.get('role'));
             }
             else{
-                this.get('store').findRecord('volunteer', id).then(function(rec){},function(err){
+                _this.get('store').findRecord('volunteer', id).then(function(rec){},function(err){
                     alert('Create a profile first!!!');
                     _this.transitionTo('volunteers.profile');
                 });

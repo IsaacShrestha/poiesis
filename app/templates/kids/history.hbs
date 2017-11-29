@@ -6,13 +6,16 @@
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 		<div class='row well well-lg'>
 		<h3>Ride History</h3>
-		{{#each model as |completedRide|}}
-			{{#if (eq completedRide.status 'completed')}}
-				<div class='col-lg-12 col-md-10 col-sm-12 col-xs-12'>
-					{{ride-display ride=completedRide}}
-				</div>
-			{{/if}}
-		{{/each}}
+		<div class='row well'>
+			{{ride-header}}
+			{{#each model as |completedRide|}}
+				{{#if (eq completedRide.status 'completed')}}
+					<div class='col-lg-10 col-md-10 col-sm-10 col-xs-10'>
+						{{ride-display ride=completedRide}}
+					</div>
+				{{/if}}
+			{{/each}}
+		</div>
 		</div>
 	</div>
 </div>

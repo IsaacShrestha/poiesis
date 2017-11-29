@@ -6,23 +6,29 @@
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 		<div class='row well well-lg'>
 			<h3>Confirmed rides</h3>
-			{{#each model as |requestedRide| }}
-				{{#if (eq requestedRide.status 'confirmed')}}
-					<div class='col-lg-10 col-md-10 col-sm-10 col-xs-10'>
-						{{ride-display ride=requestedRide}}
-					</div>
-				{{/if}}
-			{{/each}}
+			<div class='row well'>
+				{{ride-header-confirmed}}
+				{{#each model as |requestedRide| }}
+					{{#if (eq requestedRide.status 'confirmed')}}
+						<div class='col-lg-11 col-md-11 col-sm-11 col-xs-11'>
+							{{ride-display-confirmed ride=requestedRide}}
+						</div>
+					{{/if}}
+				{{/each}}
+			</div>
 		</div>
 		<div class='row well well-lg'>
 			<h3>Pending requests</h3>
-			{{#each model as |requestedRide|}}
-				{{#if (eq requestedRide.status 'pending')}}
-					<div class='col-lg-10 col-md-10 col-sm-10 col-xs-10'>
-						{{ride-display ride=requestedRide}}
-					</div>
-				{{/if}}
-			{{/each}}
+			<div class='row well'>
+				{{ride-header}}
+				{{#each model as |requestedRide|}}
+					{{#if (eq requestedRide.status 'pending')}}
+						<div class='col-lg-11 col-md-11 col-sm-11 col-xs-11'>
+							{{ride-display ride=requestedRide}}
+						</div>
+					{{/if}}
+				{{/each}}
+			</div>
 		</div>
 	</div>
 

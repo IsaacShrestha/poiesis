@@ -57,5 +57,7 @@
     "node": ">= 4"
   },
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "moment": "^2.19.2"
+  }
 }
